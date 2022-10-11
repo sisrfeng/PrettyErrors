@@ -65,7 +65,13 @@ You may use the functions `whitelist(path)` and `blacklist(path)` to add paths w
 
 ##### Pathed Configurations
 
-You may set up alternate configurations, which are triggered by the path to the code file of the frame.  For example, if you were not interested in the system frames (those under 'c:/python') but did not want to hide them completely by using the `blacklist` you could do this:
+You may set up alternate configurations,
+which are triggered by
+the path to the code file of the frame.
+For example,
+if you were not interested in the system frames (those under 'c:/python')
+but did not want to hide them completely by
+using the `blacklist` you could do this:
 
 ```python
 meh = pretty_errors.config.copy()
@@ -118,10 +124,16 @@ Configuration settings are stored in `pretty_errors.config`, though should be se
 Optional field to store config name in.
 
 * `line_length`<br>
-Output will be wrapped at this point.  If set to `0` (which is the default) it will automatically match your console width.
+Output will be wrapped at this point.
+If set to `0` (which is the default)
+it will automatically match your console width. 
 
 * `full_line_newline`<br>
-Insert a hard newline even if the line is full.  If `line_length` is the same as your console width and this is enabled then you will see double newlines when the line is exactly full, so usually you would only set this if they are different.
+Insert a hard newline even if
+    the line is full.
+If `line_length` is the same as your console width and
+this is enabled then you will see double newlines when the line is exactly full,
+    so usually you would only set this if they are different.
 
 * `separator_character`<br>
 Character used to create the header line.  Hyphen is used by default.  If set to `None` or `''` then header will be disabled.
@@ -139,25 +151,35 @@ When enabled the exception is displayed above the stack trace.
 When enabled the exception is displayed below the stack trace.
 
 * `stack_depth`<br>
-The maximum number of entries from the stack trace to display.  When `0` will display the entire stack, which is the default.
+The maximum number of entries from the stack trace to display.
+When `0` will display the entire stack, which is the default.
 
 * `top_first`<br>
-When enabled the stack trace will be reversed, displaying the top of the stack first.
+When enabled the stack trace will be reversed,
+displaying the top of the stack first.
 
 * `always_display_bottom`<br>
-When enabled (which is the default) the bottom frame of the stack trace will always be displayed.
+When enabled (which is the default)
+    the bottom frame of the stack trace will always be displayed.
 
 * `show_suppressed`<br>
-When enabled all suppressed exceptions in the stack trace will be shown (typically they are suppressed because an exception above them has replaced them).  The normal python behaviour is to hide them.
+When enabled 
+    all suppressed exceptions in the stack trace will be shown
+    (typically they are suppressed because an exception above them has replaced them).
+    The normal python behaviour is to hide them.
 
 * `filename_display`<br>
-How the filename is displayed: may be `pretty_errors.FILENAME_COMPACT`, `pretty_errors.FILENAME_EXTENDED`, or `pretty_errors.FILENAME_FULL`
+    How the filename is displayed:
+    may be `pretty_errors.FILENAME_COMPACT`,
+          `pretty_errors.FILENAME_EXTENDED`,
+          or `pretty_errors.FILENAME_FULL`
 
 * `line_number_first`<br>
 When enabled the line number will be displayed first, rather than the filename.
 
 * `display_link`<br>
-When enabled a link is written below the error location, which VSCode will allow you to click on.
+When enabled a link is written below the error location,
+which VSCode will allow you to click on.
 
 * `lines_after`, `lines_before`<br>
 How many lines of code to display for the top frame, before and after the line the exception occurred on.
