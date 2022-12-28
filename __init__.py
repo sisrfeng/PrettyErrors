@@ -426,9 +426,14 @@ class ExceptionWriter():
             output_stderr.write(text)
             count += self.visible_length(text)
         line_length = self.get_line_length()
-        if count == 0 or count % line_length != 0 or self.config.full_line_newline:
+
+        if count == 0   or \
+        count % line_length != 0 or \
+        self.config.full_line_newline:
             output_stderr.write('\n')
+
         output_stderr.write(RESET_COLOR)
+
         if self.config.reset_stdout:
             sys.stdout.write(RESET_COLOR)
 
@@ -502,8 +507,9 @@ class ExceptionWriter():
             self.config.link_color
         """
 
-        self.output_text([self.config.link_color,  '%s ;  %s' % (filepath, line)])
-
+        self.output_text([self.config.link_color, filepath ,  WHITE, ' ;; ' , line ] )
+        # self.output_text([self.config.link_color, filepath ,  WHITE, '{<' + line + '>}'])
+        # self.output_text([self.config.link_color, '"%s", line %s' % (filepath, line)])
 
     def write_code(self, filepath, line, module_globals, is_final, point_at = None):
         """Write frame code to screen.
